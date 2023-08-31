@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         if (second!=0){
                         dResult=first/second;
                         textView.setText(dResult.toString());
-                        }else {
+                        }else if (second==0) {
                             textView.setText("нельзя делить на ноль");
                         }
                         break;
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void onNumberClick(View view) {
         String textButton = ((Button) view).getText().toString();
         if (textButton.equals("AC")) {
-            textView.setText(0);
+            textView.setText("0");
             first = 0;
         } else if (textView.getText().toString().equals("0") || isOparationClick) {
             textView.setText(textButton);
@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         isOparationClick = false;
     }
 
+
+}
 
     /*if (textButton.equals("+")){
                     second = Double.valueOf(textView.getText().toString());
@@ -107,4 +109,3 @@ public class MainActivity extends AppCompatActivity {
                     sum = (first / 100) * second;
                     textView.setText(sum.toString());
                 }*/
-}
