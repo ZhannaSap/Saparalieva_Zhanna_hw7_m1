@@ -40,18 +40,22 @@ public class MainActivity extends AppCompatActivity {
         String textButton = ((Button) view).getText().toString();
         switch (textButton) {
             case "+":
+                button.setVisibility(View.INVISIBLE);
                 first = Integer.valueOf(textView.getText().toString());
                 opeation = "+";
                 break;
             case "-":
+                button.setVisibility(View.INVISIBLE);
                 first = Integer.valueOf(textView.getText().toString());
                 opeation = "-";
                 break;
             case "x":
+                button.setVisibility(View.INVISIBLE);
                 first = Integer.valueOf(textView.getText().toString());
                 opeation = "x";
                 break;
             case "/":
+                button.setVisibility(View.INVISIBLE);
                 first = Integer.valueOf(textView.getText().toString());
                 opeation = "/";
                 break;
@@ -91,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
     public void onNumberClick(View view) {
         String textButton = ((Button) view).getText().toString();
         if (textButton.equals("AC")) {
+            button.setVisibility(View.INVISIBLE);
             textView.setText("0");
             first = 0;
         } else if (textView.getText().toString().equals("0") || isOparationClick) {
