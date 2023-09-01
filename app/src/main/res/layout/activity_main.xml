@@ -14,9 +14,11 @@
         android:layout_height="0dp">
 
         <Button
+            android:id="@+id/btn_next"
             android:textSize="30sp"
             android:layout_gravity="center|top"
             android:layout_marginTop="35dp"
+            android:visibility="gone"
             android:text="NEXT ACTIVITY"
             android:backgroundTint="@color/dark_gray"
             android:layout_width="wrap_content"

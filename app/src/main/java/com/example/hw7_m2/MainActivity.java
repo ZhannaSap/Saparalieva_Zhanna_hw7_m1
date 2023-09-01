@@ -2,6 +2,8 @@ package com.example.hw7_m2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,12 +15,24 @@ public class MainActivity extends AppCompatActivity {
     private Integer first, second, sum, result, umResult, dResult;
     private Boolean isOparationClick;
     private String opeation;
+    private  Button button;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
+        button=findViewById(R.id.btn_next);
+
+        button.setOnClickListener(view -> {
+            String resultat = textView.getText().toString();
+            Intent intent=new Intent(MainActivity.this, TwoActivity.class);
+            intent.putExtra("key", resultat.toString());
+            startActivity(intent);
+            finish();
+        });
+
     }
 
     public void onOperationClick(View view) {
@@ -42,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 opeation = "/";
                 break;
             case "=":
+
+                button.setVisibility(View.VISIBLE);
                 second = Integer.valueOf(textView.getText().toString());
                 switch (opeation) {
                     case "+":

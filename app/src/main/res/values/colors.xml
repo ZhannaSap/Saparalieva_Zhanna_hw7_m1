@@ -11,5 +11,6 @@
     <color name="blue2">#2F80ED</color>
     <color name="green">#4CFF48</color>
     <color name="red_orange">#AC4800</color>
+    <color name="text_color">#2B3345</color>
 
 </resources>
