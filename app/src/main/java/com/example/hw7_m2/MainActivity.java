@@ -99,8 +99,10 @@ public class MainActivity extends AppCompatActivity {
             textView.setText("0");
             first = 0;
         } else if (textView.getText().toString().equals("0") || isOparationClick) {
+            button.setVisibility(View.INVISIBLE);
             textView.setText(textButton);
         } else {
+            button.setVisibility(View.INVISIBLE);
             textView.append(textButton);
         }
         isOparationClick = false;
